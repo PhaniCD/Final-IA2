@@ -1,0 +1,14 @@
+from sklearn.neighbors import KNeighborsClassifier
+
+# Crear modelo KNN
+knn_model = KNeighborsClassifier()
+knn_model.fit(X_train, y_train)
+
+# Predicciones
+knn_predictions = knn_model.predict(X_test)
+
+# Evaluar resultados
+accuracy_knn = accuracy_score(y_test, knn_predictions)
+precision_knn = precision_score(y_test, knn_predictions, average='weighted')
+recall_knn = recall_score(y_test, knn_predictions, average='weighted')
+f1_knn = f1_score(y_test, knn_predictions, average='weighted')
