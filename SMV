@@ -1,0 +1,14 @@
+from sklearn.svm import SVC
+
+# Crear modelo SVM
+svm_model = SVC()
+svm_model.fit(X_train, y_train)
+
+# Predicciones
+svm_predictions = svm_model.predict(X_test)
+
+# Evaluar resultados
+accuracy_svm = accuracy_score(y_test, svm_predictions)
+precision_svm = precision_score(y_test, svm_predictions, average='weighted')
+recall_svm = recall_score(y_test, svm_predictions, average='weighted')
+f1_svm = f1_score(y_test, svm_predictions, average='weighted')
