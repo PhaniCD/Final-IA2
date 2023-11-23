@@ -1,0 +1,18 @@
+pip install pandas numpy scikit-learn tensorflow
+
+import pandas as pd
+
+# Carga de datos
+url = "https://archive.ics.uci.edu/dataset/111/zoo"
+df = pd.read_csv(url)
+
+# Exploración de datos
+print(df.head())
+
+from sklearn.model_selection import train_test_split
+
+X = df.drop(['nombre_animal', 'tipo'], axis=1)
+y = df['tipo']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
