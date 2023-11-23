@@ -1,0 +1,15 @@
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+
+# Crear modelo de regresión logística
+lr_model = LogisticRegression()
+lr_model.fit(X_train, y_train)
+
+# Predicciones
+lr_predictions = lr_model.predict(X_test)
+
+# Evaluar resultados
+accuracy_lr = accuracy_score(y_test, lr_predictions)
+precision_lr = precision_score(y_test, lr_predictions, average='weighted')
+recall_lr = recall_score(y_test, lr_predictions, average='weighted')
+f1_lr = f1_score(y_test, lr_predictions, average='weighted')
