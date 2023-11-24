@@ -1,0 +1,14 @@
+print("Regresión Logística:")
+print(f"Accuracy: {accuracy_lr}, Precision: {precision_lr}, Recall: {recall_lr}, F1 Score: {f1_lr}")
+
+print("\nK-Vecinos Cercanos:")
+print(f"Accuracy: {accuracy_knn}, Precision: {precision_knn}, Recall: {recall_knn}, F1 Score: {f1_knn}")
+
+print("\nMáquinas de Vector Soporte:")
+print(f"Accuracy: {accuracy_svm}, Precision: {precision_svm}, Recall: {recall_svm}, F1 Score: {f1_svm}")
+
+print("\nNaive Bayes:")
+print(f"Accuracy: {accuracy_nb}, Precision: {precision_nb}, Recall: {recall_nb}, F1 Score: {f1_nb}")
+
+print("\nRed Neuronal:")
+print(f"Accuracy: {nn_accuracy}, Loss: {nn_loss}")
