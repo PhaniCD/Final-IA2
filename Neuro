@@ -1,0 +1,17 @@
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+
+# Crear modelo de red neuronal
+nn_model = Sequential()
+nn_model.add(Dense(64, input_dim=X_train.shape[1], activation='relu'))
+nn_model.add(Dense(7, activation='softmax'))
+
+# Compilar el modelo
+nn_model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+
+# Entrenar el modelo
+nn_model.fit(X_train, y_train, epochs=10, batch_size=32, validation_split=0.2)
+
+# Evaluar resultados
+nn_loss, nn_accuracy = nn_model.evaluate(X_test, y_test)
