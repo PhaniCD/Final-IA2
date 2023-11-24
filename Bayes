@@ -1,0 +1,14 @@
+from sklearn.naive_bayes import GaussianNB
+
+# Crear modelo Naive Bayes
+nb_model = GaussianNB()
+nb_model.fit(X_train, y_train)
+
+# Predicciones
+nb_predictions = nb_model.predict(X_test)
+
+# Evaluar resultados
+accuracy_nb = accuracy_score(y_test, nb_predictions)
+precision_nb = precision_score(y_test, nb_predictions, average='weighted')
+recall_nb = recall_score(y_test, nb_predictions, average='weighted')
+f1_nb = f1_score(y_test, nb_predictions, average='weighted')
